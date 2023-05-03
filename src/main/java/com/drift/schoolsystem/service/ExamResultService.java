@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// ExamResultService provides methods for managing exam results in the system.
 @Service
 public class ExamResultService {
 
@@ -25,10 +26,12 @@ public class ExamResultService {
     @Autowired
     private SubjectRepository subjectRepository;
 
+    // Adds a new exam result to the repository.
     public ExamResult addExamResult(ExamResult examResult) {
         return examResultRepository.save(examResult);
     }
 
+    // Updates an existing exam result in the repository.
     public ExamResult updateExamResult(ExamResult updatedExamResult) {
         ExamResult existingExamResult = examResultRepository.findById(updatedExamResult.getId()).orElse(null);
         if (existingExamResult != null) {
@@ -40,6 +43,7 @@ public class ExamResultService {
         return existingExamResult;
     }
 
+    // Deletes an exam result from the repository by ID.
     public boolean deleteExamResult(Long id) {
         if (examResultRepository.existsById(id)) {
             examResultRepository.deleteById(id);
@@ -48,10 +52,12 @@ public class ExamResultService {
         return false;
     }
 
+    // Retrieves all exam results from the repository.
     public List<ExamResult> getAllExamResults() {
         return examResultRepository.findAll();
     }
 
+    // Retrieves an exam result from the repository by ID.
     public ExamResult getExamResultById(Long id) {
         return examResultRepository.findById(id).orElse(null);
     }
@@ -68,6 +74,7 @@ public class ExamResultService {
                 .collect(Collectors.toList());
     }
 
+    // Computes the average marks for each subject.
     public Map<String, Double> getAverageMarksBySubject() {
         List<ExamResult> examResults = examResultRepository.findAll();
 
@@ -86,18 +93,21 @@ public class ExamResultService {
                 ));
     }
 
+    // Filters a list of exam results by a given student.
     public List<ExamResult> filterExamResultsByStudent(List<ExamResult> examResults, Student student) {
         return examResults.stream()
                 .filter(er -> er.getStudent().getId().equals(student.getId()))
                 .collect(Collectors.toList());
     }
 
+    // Filters a list of exam results by a given subject.
     public List<ExamResult> filterExamResultsBySubject(List<ExamResult> examResults, Subject subject) {
         return examResults.stream()
                 .filter(er -> er.getSubject().getId().equals(subject.getId()))
                 .collect(Collectors.toList());
     }
 
+    // Calculates the mean of the exam results
     public double calculateAverageScore(List<ExamResult> examResults) {
         return examResults.stream()
                 .mapToInt(ExamResult::getMarks)

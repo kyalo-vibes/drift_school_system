@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+// Student represents an individual student in the school system.
 @Entity
 @Table(name = "students")
 public class Student {
@@ -19,11 +20,13 @@ public class Student {
     public Student() {
     }
 
+    // Constructor for creating a new Student instance.
     public Student(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
+    // Getters and setters
     public Long getId() {
         return id;
     }

@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// Subject represents a subject that students can take exams in.
 @Entity
 @Table(name = "subjects")
 public class Subject {
@@ -24,6 +25,7 @@ public class Subject {
         this.category = category;
     }
 
+    // Getters and setters
     public Long getId() {
         return id;
     }

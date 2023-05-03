@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+// RankingController handles HTTP requests related to student rankings.
 @RestController
 @RequestMapping("/api/rankings")
 public class RankingController {
 
+    // RankingService handles the business logic for student rankings.
     @Autowired
     private RankingService rankingService;
 
+    // getRankings retrieves the student rankings.
     @GetMapping
     public ResponseEntity<List<StudentRank>> getRankings() {
         List<StudentRank> rankings = rankingService.rankStudents();

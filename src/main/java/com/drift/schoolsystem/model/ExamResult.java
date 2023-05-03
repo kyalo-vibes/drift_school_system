@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+// ExamResult represents the exam result of a student in a particular subject.
 @Entity
 @Table(name = "exam_results")
 public class ExamResult {
@@ -17,11 +18,15 @@ public class ExamResult {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // A many-to-one relationship with the Student entity.
+    // Each exam result is associated with a single student.
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
 
+    // A many-to-one relationship with the Subject entity.
+    // Each exam result is associated with a single subject.
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "subject_id", nullable = false)
@@ -32,12 +37,14 @@ public class ExamResult {
     public ExamResult() {
     }
 
+    // Constructor for creating a new ExamResult instance.
     public ExamResult(Student student, Subject subject, int marks) {
         this.student = student;
         this.subject = subject;
         this.marks = marks;
     }
 
+    // Getters and setters
     public Long getId() {
         return id;
     }
