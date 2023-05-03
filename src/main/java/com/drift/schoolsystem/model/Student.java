@@ -14,9 +14,7 @@ public class Student {
     private Long id;
     private String firstName;
     private String lastName;
-    @JsonManagedReference
-    @OneToMany(mappedBy = "student")
-    private List<ExamResult> examResults;
+
 
     public Student() {
     }
@@ -48,14 +46,6 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public List<ExamResult> getExamResults() {
-        return examResults;
-    }
-
-    public void setExamResults(List<ExamResult> examResults) {
-        this.examResults = examResults;
     }
 }
 

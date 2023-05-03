@@ -17,6 +17,8 @@ INSERT INTO students (id, first_name, last_name) VALUES (1, 'Alice', 'Mumbua');
 INSERT INTO students (id, first_name, last_name) VALUES (2, 'Bob', "Kaloki");
 INSERT INTO students (id, first_name, last_name) VALUES (3, 'Carol', 'Nduta');
 INSERT INTO students (id, first_name, last_name) VALUES (4, 'Dave', 'Gatundu');
+INSERT INTO students (id, first_name, last_name) VALUES (5, 'Kevin', 'Kyalo');
+
 
 -- Insert exam results
 INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (1, 70, 1, 1);
@@ -48,3 +50,10 @@ INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (25, 81, 4, 
 INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (26, 74, 4, 6);
 INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (27, 67, 4, 9);
 INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (28, 69, 4, 12);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (30, 60, 5, 1);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (31, 58, 5, 2);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (32, 79, 5, 3);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (33, 81, 5, 4);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (34, 74, 5, 6);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (35, 67, 5, 9);
+INSERT INTO exam_results (id, marks, student_id, subject_id) VALUES (36, 69, 5, 12);

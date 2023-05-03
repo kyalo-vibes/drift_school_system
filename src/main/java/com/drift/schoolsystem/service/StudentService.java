@@ -27,7 +27,6 @@ public class StudentService {
             Student student = studentOptional.get();
             student.setFirstName(updatedStudent.getFirstName());
             student.setLastName(updatedStudent.getLastName());
-            student.setExamResults(updatedStudent.getExamResults());
             return studentRepository.save(student);
         }
         return null;
@@ -62,10 +61,4 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public List<Student> filterStudentsByExamResult(String subject) {
-        return studentRepository.findAll().stream()
-                .filter(student -> student.getExamResults().stream()
-                        .anyMatch(examResult -> examResult.getSubject().getName().equalsIgnoreCase(subject)))
-                .collect(Collectors.toList());
-    }
 }

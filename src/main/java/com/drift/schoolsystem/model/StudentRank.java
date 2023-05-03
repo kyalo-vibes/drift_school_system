@@ -14,6 +14,7 @@ public class StudentRank {
     private int totalMarks;
     private int totalPoints;
     private String finalGrade;
+    private int rank;
 
     public StudentRank() {}
 
@@ -36,6 +37,13 @@ public class StudentRank {
         this.finalGrade = calculateFinalGrade();
     }
 
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
     public int getTotalMarks() {
         return totalMarks;
     }
@@ -130,5 +138,9 @@ public class StudentRank {
         if (meanPoints >= 2.5) return "D";
         if (meanPoints >= 1.5) return "D-";
         return "E";
+    }
+
+    public String getName() {
+        return student.getFirstName() + " " + student.getLastName();
     }
 }
