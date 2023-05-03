@@ -45,10 +45,4 @@ public class StudentController {
     public Student getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id);
     }
-
-    // getStudentsByName searches for student records by name.
-    @GetMapping("/search")
-    public List<Student> getStudentsByName(@RequestParam String name) {
-        return studentService.getStudentsByName(name);
-    }
 }

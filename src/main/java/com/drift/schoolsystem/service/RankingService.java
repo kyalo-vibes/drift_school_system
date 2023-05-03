@@ -83,17 +83,19 @@ public class RankingService {
 
     // Generates a CSV file containing student rankings.
     private void generateCSV(List<StudentRank> rankedStudents) {
-        String fileName = "student_rankings.csv";
+        String fileName = "rank_sheet.csv";
 
         try (FileWriter fileWriter = new FileWriter(fileName)) {
-            fileWriter.append("Name,Total Points,Total Marks,Rank\n");
+            fileWriter.append("Name,Total Marks,Total Points, Grade, Rank\n");
 
             for (StudentRank studentRank : rankedStudents) {
                 fileWriter.append(studentRank.getStudent().getFirstName() + " " + studentRank.getStudent().getLastName());
                 fileWriter.append(",");
+                fileWriter.append(String.valueOf(studentRank.getTotalMarks()));
+                fileWriter.append(",");
                 fileWriter.append(String.valueOf(studentRank.getTotalPoints()));
                 fileWriter.append(",");
-                fileWriter.append(String.valueOf(studentRank.getTotalMarks()));
+                fileWriter.append(String.valueOf(studentRank.getFinalGrade()));
                 fileWriter.append(",");
                 fileWriter.append(String.valueOf(studentRank.getRank()));
                 fileWriter.append("\n");

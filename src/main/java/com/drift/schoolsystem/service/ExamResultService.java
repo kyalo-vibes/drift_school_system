@@ -62,18 +62,6 @@ public class ExamResultService {
         return examResultRepository.findById(id).orElse(null);
     }
 
-    public List<ExamResult> getExamResultsBySubject(String subject) {
-        return examResultRepository.findAll().stream()
-                .filter(er -> er.getSubject().getName().equalsIgnoreCase(subject))
-                .collect(Collectors.toList());
-    }
-
-    public List<ExamResult> getExamResultsByStudent(Long studentId) {
-        return examResultRepository.findAll().stream()
-                .filter(er -> er.getStudent().getId().equals(studentId))
-                .collect(Collectors.toList());
-    }
-
     // Computes the average marks for each subject.
     public Map<String, Double> getAverageMarksBySubject() {
         List<ExamResult> examResults = examResultRepository.findAll();
@@ -91,20 +79,6 @@ public class ExamResultService {
                                 .average()
                                 .orElse(0.0)
                 ));
-    }
-
-    // Filters a list of exam results by a given student.
-    public List<ExamResult> filterExamResultsByStudent(List<ExamResult> examResults, Student student) {
-        return examResults.stream()
-                .filter(er -> er.getStudent().getId().equals(student.getId()))
-                .collect(Collectors.toList());
-    }
-
-    // Filters a list of exam results by a given subject.
-    public List<ExamResult> filterExamResultsBySubject(List<ExamResult> examResults, Subject subject) {
-        return examResults.stream()
-                .filter(er -> er.getSubject().getId().equals(subject.getId()))
-                .collect(Collectors.toList());
     }
 
     // Calculates the mean of the exam results

@@ -54,19 +54,4 @@ public class StudentService {
     public Student getStudentById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
-
-    // Retrieves a list of students by their full name.
-    public List<Student> getStudentsByName(String name) {
-        return studentRepository.findAll().stream()
-                .filter(student -> (student.getFirstName() + " " + student.getLastName()).equalsIgnoreCase(name))
-                .collect(Collectors.toList());
-    }
-
-    // Filters the students by their full name.
-    public List<Student> filterStudentsByName(String name) {
-        return studentRepository.findAll().stream()
-                .filter(student -> (student.getFirstName() + " " + student.getLastName()).equalsIgnoreCase(name))
-                .collect(Collectors.toList());
-    }
-
 }

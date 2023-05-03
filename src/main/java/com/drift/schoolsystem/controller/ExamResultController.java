@@ -47,18 +47,6 @@ public class ExamResultController {
         return examResultService.getExamResultById(id);
     }
 
-    // getExamResultsBySubject retrieves exam results filtered by subject.
-    @GetMapping("/by-subject/{subject}")
-    public List<ExamResult> getExamResultsBySubject(@PathVariable String subject) {
-        return examResultService.getExamResultsBySubject(subject);
-    }
-
-    // getExamResultsByStudent retrieves exam results filtered by student ID.
-    @GetMapping("/by-student/{studentId}")
-    public List<ExamResult> getExamResultsByStudent(@PathVariable Long studentId) {
-        return examResultService.getExamResultsByStudent(studentId);
-    }
-
     // getAverageMarksBySubject retrieves the average marks for each subject.
     @GetMapping("/average-marks")
     public Map<String, Double> getAverageMarksBySubject() {
