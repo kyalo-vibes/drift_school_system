@@ -38,6 +38,8 @@ A RESTful API for managing students, subjects, exam results, and student ranking
 
 ## Usage
 
+http://localhost:8080/swagger-ui/index.html#
+
 Once the application is running, you can use an API client like Postman or Curl to make requests to the available API endpoints.
 
 ## API Endpoints
@@ -68,4 +70,3 @@ Once the application is running, you can use an API client like Postman or Curl 
 
 _Note: Replace the placeholders `{id}`, `{name}`, `{subject}`, and `{studentId}` with appropriate values when making requests._
 
-This README provides a high-level overview of the School System API, its features, installation, and usage instructions. Adjust the repository URL and any other specific details based on your actual project.
