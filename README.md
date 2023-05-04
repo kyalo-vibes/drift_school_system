@@ -1,4 +1,4 @@
-# School System API
+# Drift School System
 
 A RESTful API for managing students, subjects, exam results, and student rankings in a school system.
 
@@ -6,7 +6,7 @@ A RESTful API for managing students, subjects, exam results, and student ranking
 
 - [Features](#features)
 - [Technologies](#technologies)
-- [Installation](#installation)
+- [Demo](#demo)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 
@@ -24,25 +24,18 @@ A RESTful API for managing students, subjects, exam results, and student ranking
 - Spring Data JPA
 - H2 (in-memory database)
 
-## Installation
+## Demo
 
-1. Clone the repository:
-
-
-2. Import the project into your favorite IDE.
-
-3. Configure the build system and resolve the required dependencies (use Maven or Gradle).
-
-4. Run the application using the IDE's built-in tools or via the command line:
+https://user-images.githubusercontent.com/95200602/236117774-7991d6d1-d87b-4c60-95f6-9809a71b791a.mp4
 
 
 ## Usage
 
 http://localhost:8080/swagger-ui/index.html#
 
-Once the application is running, you can use an API client like Postman or Curl to make requests to the available API endpoints.
+Once the application is running, you can use an API client like Swagger, Postman or Curl to make requests to the available API endpoints.
 
-## API Endpoints
+## API Endpoints 
 
 ### Students
 
@@ -51,7 +44,6 @@ Once the application is running, you can use an API client like Postman or Curl 
 - `POST /api/students`: Add a new student
 - `PUT /api/students/{id}`: Update an existing student
 - `DELETE /api/students/{id}`: Delete a specific student
-- `GET /api/students/name/{name}`: Get students by name
 
 ### Exam Results
 
@@ -60,8 +52,6 @@ Once the application is running, you can use an API client like Postman or Curl 
 - `POST /api/exam-results`: Add a new exam result
 - `PUT /api/exam-results/{id}`: Update an existing exam result
 - `DELETE /api/exam-results/{id}`: Delete a specific exam result
-- `GET /api/exam-results/subject/{subject}`: Get exam results by subject
-- `GET /api/exam-results/student/{studentId}`: Get exam results by student
 - `GET /api/exam-results/average-marks`: Get average marks for each subject
 
 ### Rankings
